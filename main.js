@@ -68,3 +68,18 @@
 
 // BONUS TASK
 // Demonstrate closures in javascript.
+
+//Task 1.
+car = {
+    brand: "Toyota",
+    color: "white",
+    numOfDoors: "4",
+}
+console.log(car.brand);
+console.log(car.color);
+console.log(car.numOfDoors);
+//Task 2.
+
+function createPerson() {
+    
+}

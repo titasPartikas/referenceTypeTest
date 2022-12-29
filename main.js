@@ -1,12 +1,21 @@
 // TASK 1
 // Create an object car with these fields: brand, color, numOfDoors. Fill those fields with values and console.log each of them separately.
 
-
+const car = {
+    carBrand: "skoda",
+    carColor: "grey",
+    numOfDoors: "5",
+}
+console.log(car.carBrand);
+console.log(car.carColor);
+console.log(car.numOfDoors);
 
 // TASK 2
 // Create a function createPerson that takes first name and last name, age, and returns object with same named keys and its values are set to the passed arguments.
 
-
+function createPerson () {
+    
+}
 
 // TASK 2.1
 // Add a method to that object that when it's invoked it should return if that person is of legal age, legal age is 20.

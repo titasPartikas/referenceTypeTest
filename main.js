@@ -1,6 +1,11 @@
 // TASK 1
 // Create an object car with these fields: brand, color, numOfDoors. Fill those fields with values and console.log each of them separately.
+const obj = {
+    brand: armani,
 
+    color: gold,
+    numOfDoors: 1,
+};
 
 
 // TASK 2

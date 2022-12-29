@@ -1,11 +1,23 @@
 // TASK 1
 // Create an object car with these fields: brand, color, numOfDoors. Fill those fields with values and console.log each of them separately.
 
+const car = {
+    brand: 'audi',
+    color: 'red',
+    numOfDoors: 4,
+};
 
+console.log(`Brand: ${car.brand}, color: ${car.color}, number of doors: ${car.numOfDoors}.`);
 
 // TASK 2
 // Create a function createPerson that takes first name and last name, age, and returns object with same named keys and its values are set to the passed arguments.
 
+function createPerson (firstName, lastName, age) {
+    firstName.value = 'Vardenis';
+    lastName.value = 'Pavardenis';
+    age.value = 27;
+    return firstName, lastName, age
+}
 
 
 // TASK 2.1

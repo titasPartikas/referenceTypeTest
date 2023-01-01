@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js" defer></script>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript test</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div>
+        <label for="key">Key</label>
+        <input id="key" type="text" name="key" />
+
+        <label for="value">Value</label>
+        <input id="value" type="text" name="value" />
+
+        <button id="create-button" type="button">Create object</button>
+      </div>
+
+      <hr />
+
+      <h1>Choose your car</h1>
+      <div class="container">
+        <div class="car-container">
+          <div>
+            <label for="car-brand">Car brand</label>
+            <input id="car-brand" type="text" name="car-brand" />
+          </div>
+
+          <div>
+            <label for="Car color">Car color</label>
+            <input id="car-color" type="text" name="car-color" />
+          </div>
+
+          <select name="engine" id="engine-power">
+            <option value="choose-engine" default>Choose engine</option>
+            <option value="80">80kW</option>
+            <option value="100">100kW</option>
+            <option value="120">120kW</option>
+          </select>
+
+          <select name="transmition" id="transmition">
+            <option value="choose-transmition" default>Choose transmition</option>
+            <option value="manual">Manual</option>
+            <option value="automatic">Automatic</option>
+          </select>
+
+          <div>
+            <label for="premium-package">Premium-package</label>
+            <input id="premium-package" type="checkbox" />
+          </div>
+
+          <div>
+            <label for="winter-package">Winter-package</label>
+            <input id="winter-package" type="checkbox" />
+          </div>
+
+          <button id="confirm-button" type="button">Confirm</button>
+        </div>
+        <div class="display-container hidden">
+          <textarea name="displayer" id="displayer" ></textarea>
+          <button id="edit-button" type="button">Edit</button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

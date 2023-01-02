@@ -28,6 +28,16 @@ button {
     padding: 5px;
 }
 
+.result {
+    width: 100%;
+}
+
 .hidden {
     display: none;
+}
+
+.text {
+    resize: none;
+    height: 100px;
+    width: 280px;
 }

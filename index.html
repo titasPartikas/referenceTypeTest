@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="main.js" defer></script>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <label for="key">Key: </label>
+      <input type="text" id="key" name="key" />
+      <label for="value">Value: </label>
+      <input type="text" id="value" name="value" />
+      <button id="add-button">Add</button>
+    </div>
+    <div class="container">
+      <label for="brand">Brand:</label>
+      <input type="text" name="brand" id="brand" required/>
+      <label for="color">Color:</label>
+      <input type="text" name="color" id="color" required/>
+      <label for="engine">Engine:</label>
+      <select name="engine" id="engine" required>
+        <option value="80kW">80kW</option>
+        <option value="100kW">100kW</option>
+        <option value="120kW">120kW</option>
+      </select>
+      <label for="transmition">Transmition:</label>
+      <select name="transmition" id="transmition" required>
+        <option value="manual">Manual</option>
+        <option value="automatic">Automatic</option>
+      </select>
+      <div class="packages-container">
+        <label for="premium">Premium package:</label>
+        <input type="checkbox" name="premium" id="premium" />
+        <label for="winter">Winter package:</label>
+        <input type="checkbox" name="winter" id="winter" />
+      </div>
+      <div class="btn-container">
+        <button id="submit">Submit</button>
+        <button id="edit" class="hidden">Edit</button>
+      </div>
+      <div class="result">
+
+      </div>
+    </div>
+  </body>
 </html>

@@ -13,9 +13,17 @@ console.log(car.numOfDoors);
 // TASK 2
 // Create a function createPerson that takes first name and last name, age, and returns object with same named keys and its values are set to the passed arguments.
 
-function createPerson () {
-    
-}
+
+function createPerson(firstName, lastName, age) {
+    var obj = {
+      firstName:  Andrius,
+      lastName: Kincius,
+      age: 33
+    };
+    return obj;
+  }
+
+  console.log(firstName, lastName, age);
 
 // TASK 2.1
 // Add a method to that object that when it's invoked it should return if that person is of legal age, legal age is 20.

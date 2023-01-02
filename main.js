@@ -14,26 +14,50 @@ console.log(car.numOfDoors);
 // Create a function createPerson that takes first name and last name, age, and returns object with same named keys and its values are set to the passed arguments.
 
 
-function createPerson(firstName, lastName, age) {
-    var obj = {
-      firstName:  Andrius,
-      lastName: Kincius,
-      age: 33
-    };
-    return obj;
-  }
+function createPerson(name, lname, number) {
+     var firstName = name;
+     var lastName = lname;
+     var age = number;
+    
+    return {
+        _firstName: name,
+        _lastName: lname,
+        _age: number
+    }
+  };
 
-  console.log(firstName, lastName, age);
+var various = createPerson('Andrius', 'Kincius', 33);
+
+console.log(various._firstName);
+console.log(various._lastName);
+console.log(various._age);
+
+  
 
 // TASK 2.1
 // Add a method to that object that when it's invoked it should return if that person is of legal age, legal age is 20.
 
 
 
+ function legalAge(age) {
+  if (age > 20) {
+    return "Legal"
+  }
+  else {
+    return "Not legal"
+  }
+}
+
+console.log(legalAge);
+
 // TASK 3
 // Create two inputs and a button in your HTML, when button is clicked create and return an object with its key set as the first input value and its value is set to the second input value.
 
-
+function myFunction() {
+    const input = document.getElementById("input");
+    // let html = "<p>My new paragraph.</p>";
+    const output = document.inserttext("output");
+  }
 
 // TASK 4
 // Create a function isEqual that takes two objects and returns if they are equal. Use function created in second task to create objects that you need to compare. Remember functions are reference type just like objects are.

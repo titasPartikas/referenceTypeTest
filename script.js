@@ -166,6 +166,8 @@ Reikės peržiūrėti style.css ir sudėlioti su flex: 1... Pan. kaip biudžeto 
 
 // Paspaudus search nenusiresetina...
 
+// sprendimas užduoties visiškai kitoks... toks įspūdis, kad tik pasiimta iš html teisingai, visa kita..........
+
 const carBtn = document.querySelector("#car-search");
 const carBrand = document.querySelector("#car-brand");
 const carColor = document.querySelector("#car-color");
@@ -200,7 +202,8 @@ function displayResult() {
   const resultParagraph = document.createElement("p");
   const editButton = document.createElement("button");
   resultParagraph.textContent = JSON.stringify(createCarObject());
-  editButton.textContent = "Edit"; // Edit button atrodo, kad veikia ne taip, kaip užduotyje parašyta, kad veiktų, nes neišeditina
+  editButton.textContent = "Edit"; // Edit button atrodo, kad veikia ne taip (editina tik paskutinį),
+  // kaip užduotyje parašyta, kad veiktų, nes neišeditina antros tarkim reikšmės....
   // Pas Titą kažkaip kitaip ten event pasiekiamas... target aš pas save nerandu
 
   resultContainer.append(resultParagraph, editButton);
@@ -251,6 +254,17 @@ console.log(newPerson);
 
 // BONUS TASK
 // Demonstrate closures in javascript.
+
+function makeFunc() {
+  const name = 'Closures';
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
 
 // Tarkime, sukūrus funkciją A ir jos viduje sukūrus kitą funkciją B, funkcija B už funkcijos A ribų neveiks,
 // nes ji veikia tik funkcijos A viduje

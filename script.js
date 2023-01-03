@@ -9,22 +9,56 @@ const car = {
 
 console.log(car);
 
+// patikslinimas pagal reikalavimus
+console.log(car.brand);
+console.log(car.color);
+console.log(car.numOfDoors);
+
 
 // TASK 2
 // Create a function createPerson that takes first name and last name, age, and returns object with same named keys and
 // its values are set to the passed arguments.
 
+// 
+
 // TASK 2.1
 // Add a method to that object that when it's invoked it should return if that person is of legal age, legal age is 20.
 
+/*
+shorthand'as taip turėtų būti
+
+function createPerson(firstName, lastName, age) {
+  return {
+    firstName,
+    lastName,
+    age,
+
+    // metodas pridėtas
+    isAgeLegal: () => {
+      return age => 20;
+    },
+
+  }
+}
+
+console.log(createPerson("Darius", "Stasiukaitis", 36));
+console.log(createPerson("Darius", "Stasiukaitis", 36).isAgeLegal());
+
+daug skirtingų būdų atlikti šį "task'ą" --- reiks dar kartą peržiūrėt video...
+
+*/
+
+// Čia veikia, bet padaryti galima kitaip (plius dar yra klaida, nes lygu ženklas buvo neįrašytas)
 function createPerson(personFirstName, personLastName, personAge) {
   const person = {
     firstName: personFirstName,
     lastName: personLastName,
     age: personAge,
     legalAge: false,
+
+    // Pridėtas metodas
     isAgeLegal() {
-      if (personAge > 20) {
+      if (personAge >= 20) {
         person.legalAge = true;
         return true;
       }
@@ -80,6 +114,8 @@ function createObject() {
   return newObject;
 }
 
+// PERŽIŪRĖTI 2023-01-03 PASKAITĄ IR PASIDOMĖT TOM arrowFunction (jeigu čia teisingai supratau...)
+
 // TASK 4
 
 // Iškelta užduotis prie TASK 2
@@ -122,11 +158,19 @@ function createObject() {
     on button click we created containers that we displayed on the right side, for checkboxes display their values as boolean type)
 */
 
+/*
+Jau matau, kad ne taip vėl supratau užduotį, nes ne šone suformuoja rezultatus...
+Čia kaip toje formos užduotyje turėjo būti padaryta, kai įvedamas vardas, pavardė, komentaras ir pan...
+Reikės peržiūrėti style.css ir sudėlioti su flex: 1... Pan. kaip biudžeto užduotyje
+*/
+
+// Paspaudus search nenusiresetina...
+
 const carBtn = document.querySelector("#car-search");
 const carBrand = document.querySelector("#car-brand");
 const carColor = document.querySelector("#car-color");
 const carEngine = document.querySelector("#engine");
-const carGearbox = document.querySelector("#transmission");
+const carTransmission = document.querySelector("#transmission");
 const premiumPackage = document.querySelector("#premium");
 const winterPackage = document.querySelector("#winter");
 const bodyElement = document.querySelector("body");
@@ -139,7 +183,7 @@ function createCarObject() {
     carBrand: carBrand.value,
     carColor: carColor.value,
     carEngine: carEngine.value,
-    carGearbox: carGearbox.value,
+    carTransmission: carTransmission.value,
     extras: {
       premiumPackage: premiumPackage.checked,
       winterPackage: winterPackage.checked,
@@ -149,12 +193,15 @@ function createCarObject() {
   return car;
 }
 
+// Nuo čia Titas kažkaip kitaip išDisplay'ina ...
+
 function displayResult() {
   const resultContainer = document.createElement("div");
   const resultParagraph = document.createElement("p");
   const editButton = document.createElement("button");
   resultParagraph.textContent = JSON.stringify(createCarObject());
-  editButton.textContent = "Edit";
+  editButton.textContent = "Edit"; // Edit button atrodo, kad veikia ne taip, kaip užduotyje parašyta, kad veiktų, nes neišeditina
+  // Pas Titą kažkaip kitaip ten event pasiekiamas... target aš pas save nerandu
 
   resultContainer.append(resultParagraph, editButton);
   bodyElement.append(resultContainer);
@@ -163,6 +210,10 @@ function displayResult() {
     resultParagraph.textContent = JSON.stringify(createCarObject());
   });
 }
+
+// const clearForm = () => {
+//   car
+// }
 
 // TASK 6
 /*

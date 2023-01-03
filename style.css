@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.first-div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-size: large;
+    gap: 10px;
+    margin: 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+.second-div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 10px;
+    font-size: large;
+    gap: 5px;
+    text-align: center;
+}

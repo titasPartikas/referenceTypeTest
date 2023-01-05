@@ -129,9 +129,11 @@ orderCarBtn.addEventListener("click", () => {
   clearForm();
 });
 
-// TODO: create edit order logic using getOrderParagraphs(car)
 const onEditOrder = (car) => {
-  
+  editModeContainer.innerHTML = '';
+  prepareOrderContainer(editModeContainer, car);
+  orderCarBtn.textContent = 'Order';
+  isEditOrderMode = false;
 };
 
 /*
@@ -143,6 +145,11 @@ const onEditOrder = (car) => {
 const displayOrderedCar = (car) => {
   const container = document.createElement("div");
   container.classList.add("ordered-car");
+  prepareOrderContainer(container, car)
+  carListContainer.append(container);
+};
+
+const prepareOrderContainer = (container, car) => {
   fillContainerDataAttributes(container, car);
   const {
     brandParagraph,
@@ -172,8 +179,7 @@ const displayOrderedCar = (car) => {
     premiumPackageParagraph,
     editBtn
   );
-  carListContainer.append(container);
-};
+}
 
 const fillContainerDataAttributes = (container, car) => {
   container.dataset.color = car.color;
@@ -253,7 +259,7 @@ const parseStringifiedBoolean = (value) => {
 	(apart 'Edit' button it should look simillar to how we implemented our forms in projects that we did where user enters information and on button click we created containers that we displayed on the right side, for checkboxes display their values as boolean type)
 */
 
-// TASK 6 ---- 1.b should be more clear on what it's supposed to do, maybe find examples?
+// TASK 6 ---- 1.b should be more clear on what it's supposed to do, maybe find examples?. d. maybe add method name instead of pointing to the task number
 /*
     Create a function validatePersonEntry which would take two arguments:
         a. person object constructed in task two
@@ -265,9 +271,54 @@ const parseStringifiedBoolean = (value) => {
 		d. entryAllowed ( should be return value of method that we have created in 2.1 )
 */
 
+const validatePersonEntry = (person, exposeAge = false) => {
+  const entryValidation = {
+    firstName: person.firstName,
+    lastName: person.lastName,
+    entryAllow: person.getIsOfLegalAge(),
+  }
+
+  if (exposeAge) {
+    entryValidation.age = person.age;
+  }
+
+  return entryValidation;
+}
+
+const person1 = createPerson('Vardenis', 'Pavardenis', 15);
+
+console.log(validatePersonEntry(person1, true));
+addSeperator('BONUS');
 // BONUS TASK
 // Demonstrate closures in javascript.
+const housePrice = 50000;
+// lets assume a person is buying a house and we need to know if he can afford it.
+const validateIfPersonCanPurchase = (budget) => {
+  const loans = 5000;
 
+  if (loans > 10000) {
+    return false;
+  }
+
+  if (housePrice > budget) {
+    return false;
+  }
+
+  const informBank = () => {
+    const bankAccountId = '123';
+
+    console.log({
+      loans,
+      housePrice,
+      budget,
+      bankAccountId
+    })
+  }
+  informBank();
+  return true;
+}
+
+console.log(validateIfPersonCanPurchase(60000));
 function addSeperator(task) {
   const prefixSuffix = "-----------------";
   console.log(`${prefixSuffix}${task}${prefixSuffix}`);

@@ -6,8 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <section id="task-3" class="task-section">
+        <label for="key">Key</label>
+        <input id="key">
+        <label for="value">Value</label>
+        <input id="value">
+        <button id="dynamicKeyBtn">Create</button>
+    </section>
+    <section id="task-5" class="task-section">
+        <div class="form">
+            <label for="carBrand">Car Brand</label>
+            <input id="carBrand">
+            <label for="carColor">Car Color</label>
+            <input id="carColor">
+            <label for="engine">Engine</label>
+            <select id="engine">
+                <option value="80kW">80kW</option>
+                <option value="100kW">100kW</option>
+                <option value="120kW">120kW</option>
+            </select>
+            <label for="transmition">Transmition</label>
+            <select id="transmition">
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+            </select>
+            <label for="premiumPackage">Premium Package</label>
+            <input type="checkbox" id="premiumPackage">
+            <label for="winterPackage">Winter Package</label>
+            <input type="checkbox" id="winterPackage">
+            <button id="orderCarBtn">Order Car</button>
+        </div>
+        <div class="car-list"></div>
+    </section>
 </body>
 </html>

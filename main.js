@@ -149,7 +149,7 @@ function createCheckbox() {
   checkboxDiv.append(label, checkbox, label1, checkbox1);
 
   if (checkbox.checked) {
-    thisCar.extras = checkbox.value;
+    thisCar.extras = checkbox.value; //undefined
   }
   if (checkbox1.checked) {
     thisCar.extras = checkbox1.value;
